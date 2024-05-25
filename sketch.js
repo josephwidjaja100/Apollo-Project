@@ -1,7 +1,6 @@
 new p5();
 
 let regularFont;
-let headingFont;
 let titleFont;
 let launchTowerImg;
 let rocketImg;
@@ -111,16 +110,17 @@ function draw(){
 
   translate(noise(rocketHeight / 100) * 20 - 10, noise(rocketHeight / 100 + 1000) * 20 - 10);
 
-  let mult = (0.9 * height) / (launchTowerImg.height);
+  let mult = (height) / (launchTowerImg.height);
   imageMode(CENTER);
-  image(launchTowerImg, width/2, height-launchTowerImg.height*mult/2+rocketHeight, launchTowerImg.width*mult, launchTowerImg.height*mult);
-  image(rocketImg, width/2, height-rocketImg.height*mult/2, rocketImg.width*mult, rocketImg.height*mult);
   push();
   scale(width/1991, height/1120);
   for(let cloud of clouds){
     image(cloudImg, cloud[0], cloud[1]+rocketHeight, cloudImg.width*mult/5, cloudImg.height*mult/5);
   }
   pop();
+
+  image(launchTowerImg, width / 2, height - launchTowerImg.height * mult / 2 + rocketHeight, launchTowerImg.width * mult, launchTowerImg.height * mult);
+  image(rocketImg, width / 2, height - rocketImg.height * mult / 2, rocketImg.width * mult, rocketImg.height * mult);
 
   fill(color(153, 153, 153));
   noStroke();
@@ -130,7 +130,7 @@ function draw(){
     particle.update((rocketTarget - rocketHeight) / 10);
   }
   for (let i = 0.3; i < (rocketTarget - rocketHeight) / 10; i++){
-    engine(1045, 960, Math.PI * 1.5, i - 0.3);
+    engine(1051.5, 950, Math.PI * 1.5, i - 0.3);
   }
 
   particles = particles.filter(x => x.age < 150);
@@ -141,6 +141,18 @@ function draw(){
     particle.draw();
   }
   pop();
+
+  textSize(100);
+  textFont(titleFont);
+  textAlign(CENTER, CENTER);
+  fill('black');
+  text('Apollo 11', width*3/4, height/2-50+rocketHeight);
+
+  textSize(30);
+  textFont(regularFont);
+  textAlign(CENTER, CENTER);
+  fill('black');
+  text('scroll down :)', width*3/4,height/2+50+rocketHeight);
   pop();
 }
 
