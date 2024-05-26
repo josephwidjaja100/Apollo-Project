@@ -148,7 +148,7 @@ function draw(){
   let mult = (height) / (launchTowerImg.height);
   imageMode(CENTER);
   for(let cloud of clouds){
-    image(cloudImg, cloud[0], cloud[1]+rocketHeight, cloudImg.width*mult/5, cloudImg.height*mult/5);
+    image(cloudImg, cloud[0], cloud[1]+rocketHeight, cloudImg.width*mult/2, cloudImg.height*mult/2);
   }
 
   image(launchTowerImg, width / 2, height - launchTowerImg.height * mult / 2 + rocketHeight, launchTowerImg.width * mult, launchTowerImg.height * mult);
