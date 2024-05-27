@@ -260,7 +260,7 @@ function draw(){
     particles = particles.filter(x => x.age < 150);
     // console.log(width, height);
     push();
-    scale(width/1991, height/1120);
+    // scale(width/1991, height/1120);
     for (let particle of particles){
       particle.draw();
     }
