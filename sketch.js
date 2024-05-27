@@ -13,7 +13,7 @@ let cloudlayers = 10;
 let cloudlayerheight = 500;
 
 let textboxes = [
-  { t: 'Please enjoy the result of 5 hours and 300 lines of painstaking code!'},
+  { t: 'Please enjoy the result of like 6 hours and 300 lines of my painstaking code!'},
   { t: 'Apollo 11 is the American spaceflight launched by NASA on July 16, 1969 that is most known for the monumental achievement of allowing astronauts Neil Armstrong and Buzz Aldrin to become the first people ever to land and walk on the surface of the Moon. '},
   { t: 'The crew consisted of Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Edwin "Buzz" Aldrin. After a four-day journey, on July 20, 1969, Armstrong and Aldrin descended to the lunar surface in the Lunar Module called "Eagle." Collins never stepped foot on the Moon, instead orbiting around it in the Command Module called "Columbia."'},
   { t: 'The primary objective of this mission was to fulfill President John F. Kennedy\'s goal of "landing a man on the moon and returning him safely to the Earth" before the end of the decade. Kennedy was motivated by the pressure to catch up to the Soviet Union in the "space race" because Soviet Yuri Gagarin was the first human in space.'},
@@ -26,7 +26,7 @@ let textboxes = [
   { t: 'Furthermore, in a time of significant social and political upheaval due to events such as the civil rights movement and the Vietnam War, the Apollo 11 mission fostered a sense of national pride and unity and showed the still ongoing positive growth of the U.S.'},
   { t: 'Apollo 11 is a powerful testament to the amazing innovation, ingenuity, and determination of humanity'},
   { t: 'Thank you for scrolling!!' },
-  { t: 'Sources: https://commons.wikimedia.org/wiki/File:Saturn_V_-_launch_tower.svg\nhttps://www.britannica.com/topic/Apollo-11\nhttps://www.nasa.gov/news-release/nasa-shares-progress-toward-early-artemis-moon-missions-with-crew/\nhttps://www.nasa.gov/history/the-decision-to-go-to-the-moon/\nhttps://www.planetary.org/space-policy/cost-of-apollo\nhttps://www.nasa.gov/news-release/nasa-shares-progress-toward-early-artemis-moon-missions-with-crew/\nhttps://www.history.com/news/moon-landing-technology-inventions-computers-heat-shield-rovers\nhttps://www.history.com/news/what-if-the-moon-landing-had-failed\nhttps://www.history.com/news/buzz-aldrin-moon-landing-accident\nhttps://www.nasa.gov/mission/apollo-11/\nhttps://www.theepochtimes.com/bright/neil-armstrong-and-buzz-aldrin-became-the-first-men-to-walk-on-the-moon-51-years-ago-this-week-3431874\nhttps://www.nasa.gov/image-article/apollo-11-launches-into-history/\nhttps://www.navytimes.com/news/your-navy/2019/07/13/apollo-11s-amiable-strangers-armstrong-aldrin-collins/\nhttps://www.nasa.gov/history/60-years-ago-president-kennedy-proposes-moon-landing-goal-in-speech-to-congress/'},
+  { t: 'Sources: https://commons.wikimedia.org/wiki/File:Saturn_V_-_launch_tower.svg\nhttps://www.britannica.com/topic/Apollo-11\nhttps://www.nasa.gov/news-release/nasa-shares-progress-toward-early-artemis-moon-missions-with-crew/\nhttps://www.nasa.gov/history/the-decision-to-go-to-the-moon/\nhttps://www.planetary.org/space-policy/cost-of-apollo\nhttps://www.nasa.gov/news-release/nasa-shares-progress-toward-early-artemis-moon-missions-with-crew/\nhttps://www.history.com/news/moon-landing-technology-inventions-computers-heat-shield-rovers\nhttps://www.history.com/news/what-if-the-moon-landing-had-failed\nhttps://www.history.com/news/buzz-aldrin-moon-landing-accident\nhttps://www.nasa.gov/mission/apollo-11/\nhttps://www.theepochtimes.com/bright/neil-armstrong-and-buzz-aldrin-became-the-first-men-to-walk-on-the-moon-51-years-ago-this-week-3431874\nhttps://www.nasa.gov/image-article/apollo-11-launches-into-history/\nhttps://www.navytimes.com/news/your-navy/2019/07/13/apollo-11s-amiable-strangers-armstrong-aldrin-collins/\nhttps://www.nasa.gov/history/60-years-ago-president-kennedy-proposes-moon-landing-goal-in-speech-to-congress/\nhttps://blogs.illinois.edu/view/25/801367#image-3\nhttps://www.sothebys.com/en/buy/auction/2022/buzz-aldrin-american-icon/flown-to-and-used-on-the-lunar-surface-the-broken'},
 ];
 
 let images = [
@@ -37,8 +37,8 @@ let images = [
   { t: 'no image' },
   { t: 'heatshield.png' },
   { t: 'no image' },
-  { t: 'no image' },
-  { t: 'no image' },
+  { t: 'pencircuit.png' },
+  { t: 'disasterspeech.png' },
   { t: 'no image' },
   { t: 'no image' },
   { t: 'manonmoon.png' },
@@ -46,7 +46,7 @@ let images = [
   { t: 'no image' }
 ]
 
-let textdist = 1900;
+let textdist = 1900*windowHeight/1120;
 for(let i = 0; i < textboxes.length; i++){
   Object.defineProperty(textboxes[i], "at", {value:(i+1)*textdist, configurable:true});
   Object.defineProperty(textboxes[i], "x", {value: windowWidth/4*(2*(i%2)+1), configurable: true});
@@ -57,12 +57,12 @@ for(let i = 0; i < textboxes.length; i++){
   Object.defineProperty(images[i], "y", { value: windowHeight / 2 });
 }
 
-let endscreenheight = textboxes.length*textdist;
+let endscreenheight = (textboxes.length-1)*textdist;
 Object.defineProperty(textboxes[textboxes.length - 1], "at", {value:endscreenheight + 2500*windowHeight/1120});
 Object.defineProperty(textboxes[textboxes.length - 1], "x", {value:windowWidth/2});
 console.log(textboxes);
 
-bottomHeight = -100;
+bottomHeight = -100*windowHeight/1120;
 for (let i = 0; i < cloudlayers; i++) {
   for (let j = 0; j <= 3*(cloudlayers - i)/cloudlayers; j++) {
     let x = random(windowWidth/20, windowWidth*19/20);
