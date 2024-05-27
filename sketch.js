@@ -221,7 +221,7 @@ function draw(){
 
   noStroke(); 
   fill(255 - 255 * (fade + out)); 
-  textSize(30);   
+  textSize(30*height/1120);   
   push();
   for (let i = 0; i < textboxes.length; i++) {
     let t = textboxes[i];
@@ -229,8 +229,8 @@ function draw(){
     textFont(regularFont);
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
-    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 500)) * Math.pow((rocketHeight - t.at) / 1000, 3) + (rocketHeight - t.at) / 10;
-    text(t.t, t.x, t.y + y, 500);
+    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 500*height/1120)) * Math.pow((rocketHeight - t.at) / 1000*height/1120, 3) + (rocketHeight - t.at) / 10;
+    text(t.t, t.x, t.y + y, 500*width/1991);
 
     imageMode(CENTER);
     if(img.t != 'no image'){
@@ -254,7 +254,7 @@ function draw(){
       particle.update((rocketTarget - rocketHeight) / 50);
     }
     for (let i = 0.3; i < (rocketTarget - rocketHeight) / 10; i++){
-      engine(1051.5, 960, Math.PI * 1.5, i+0.3);
+      engine(1051.5*width/1991, 960*height/1120, Math.PI * 1.5, i+0.3);
     }
 
     particles = particles.filter(x => x.age < 150);
