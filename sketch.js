@@ -46,7 +46,7 @@ let images = [
   { t: 'no image' }
 ]
 
-let textdist = 1900*windowHeight/1120;
+let textdist = 1900;
 for(let i = 0; i < textboxes.length; i++){
   Object.defineProperty(textboxes[i], "at", {value:(i+1)*textdist, configurable:true});
   Object.defineProperty(textboxes[i], "x", {value: windowWidth/4*(2*(i%2)+1), configurable: true});
@@ -254,7 +254,7 @@ function draw(){
       particle.update((rocketTarget - rocketHeight) / 50);
     }
     for (let i = 0.3; i < (rocketTarget - rocketHeight) / 10; i++){
-      engine(1051.5*width/1991, 960*height/1120, Math.PI * 1.5, i+0.3);
+      engine(1051.5, 960, Math.PI * 1.5, i+0.3);
     }
 
     particles = particles.filter(x => x.age < 150);
