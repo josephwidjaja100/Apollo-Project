@@ -9,7 +9,7 @@ let rocketHeight = 0;
 let rocketTarget = 0;
 let particles = [];
 let clouds = [];
-let cloudlayers = 10;
+let cloudlayers = 5;
 let cloudlayerheight = 500;
 
 let textboxes = [
@@ -46,7 +46,7 @@ let images = [
   { t: 'no image' }
 ]
 
-let textdist = 1900*windowHeight/1120;
+let textdist = 1200*windowHeight/1120;
 for(let i = 0; i < textboxes.length; i++){
   Object.defineProperty(textboxes[i], "at", {value:(i+1)*textdist, configurable:true});
   Object.defineProperty(textboxes[i], "x", {value: windowWidth/4*(2*(i%2)+1), configurable: true});
@@ -229,7 +229,7 @@ function draw(){
     textFont(regularFont);
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
-    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 500*height/1120)) * Math.pow((rocketHeight - t.at) / 1000*height/1120, 3) + (rocketHeight - t.at) / 10;
+    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 200)) * Math.pow((rocketHeight - t.at) / 400, 3) + (rocketHeight - t.at) / 10;
     text(t.t, t.x, t.y + y, 500*width/1991);
 
     imageMode(CENTER);
