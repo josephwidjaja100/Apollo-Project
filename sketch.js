@@ -46,7 +46,7 @@ let images = [
   { t: 'no image' }
 ]
 
-let textdist = 1900*height/1120;
+let textdist = 1900*windowHeight/1120;
 for(let i = 0; i < textboxes.length; i++){
   Object.defineProperty(textboxes[i], "at", {value:(i+1)*textdist, configurable:true});
   Object.defineProperty(textboxes[i], "x", {value: windowWidth/4*(2*(i%2)+1), configurable: true});
