@@ -58,7 +58,7 @@ for(let i = 0; i < textboxes.length; i++){
 }
 
 let endscreenheight = (textboxes.length-1)*textdist;
-Object.defineProperty(textboxes[textboxes.length - 1], "at", {value:endscreenheight + 5000*windowHeight/1120});
+Object.defineProperty(textboxes[textboxes.length - 1], "at", {value:endscreenheight + 3000*windowHeight/1120});
 Object.defineProperty(textboxes[textboxes.length - 1], "x", {value:windowWidth/2});
 console.log(textboxes);
 
