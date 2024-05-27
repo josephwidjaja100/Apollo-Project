@@ -229,7 +229,7 @@ function draw(){
     textFont(regularFont);
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
-    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 200)) * Math.pow((rocketHeight - t.at) / 400, 3) + (rocketHeight - t.at) / 10;
+    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 100)) * Math.pow((rocketHeight - t.at) / 200, 3) + (rocketHeight - t.at) / 10;
     text(t.t, t.x, t.y + y, 500*width/1991);
 
     imageMode(CENTER);
@@ -254,7 +254,7 @@ function draw(){
       particle.update((rocketTarget - rocketHeight) / 50);
     }
     for (let i = 0.3; i < (rocketTarget - rocketHeight) / 10; i++){
-      engine(1051.5, 960, Math.PI * 1.5, i+0.3);
+      engine(1051.5*width/1991, 960*height/1120, Math.PI * 1.5, i+0.3);
     }
 
     particles = particles.filter(x => x.age < 150);
