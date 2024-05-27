@@ -229,7 +229,7 @@ function draw(){
     textFont(regularFont);
     rectMode(CENTER);
     textAlign(CENTER, CENTER);
-    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 500*height/1120)) * Math.pow((rocketHeight - t.at) / 1000*height/1120, 3) + (rocketHeight - t.at) / 10;
+    let y = Math.max(0, (Math.abs(rocketHeight - t.at) - 500)) * Math.pow((rocketHeight - t.at) / 1000, 3) + (rocketHeight - t.at) / 10;
     text(t.t, t.x, t.y + y, 500*width/1991);
 
     imageMode(CENTER);
