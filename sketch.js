@@ -254,7 +254,7 @@ function draw(){
       particle.update((rocketTarget - rocketHeight) / 50);
     }
     for (let i = 0.3; i < (rocketTarget - rocketHeight) / 10; i++){
-      engine(1045*width/1991, 960*height/1120, Math.PI * 1.5, i+0.3);
+      engine(1051*width/1991, 960*height/1120, Math.PI * 1.5, i+0.3);
     }
 
     particles = particles.filter(x => x.age < 150);
