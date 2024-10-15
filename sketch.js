@@ -13,7 +13,7 @@ let cloudlayers = 5;
 let cloudlayerheight = 500;
 
 let textboxes = [
-  { t: 'Please enjoy the result of like 6 hours and 300 lines of my painstaking code!'},
+  { t: 'Please enjoy the result of 5 days and 300 lines of my code!'},
   { t: 'Apollo 11 is the American spaceflight launched by NASA on July 16, 1969 that is most known for the monumental achievement of allowing astronauts Neil Armstrong and Buzz Aldrin to become the first people ever to land and walk on the surface of the Moon. '},
   { t: 'The crew consisted of Commander Neil Armstrong, Command Module Pilot Michael Collins, and Lunar Module Pilot Edwin "Buzz" Aldrin. After a four-day journey, on July 20, 1969, Armstrong and Aldrin descended to the lunar surface in the Lunar Module called "Eagle." Collins never stepped foot on the Moon, instead orbiting around it in the Command Module called "Columbia."'},
   { t: 'The primary objective of this mission was to fulfill President John F. Kennedy\'s goal of "landing a man on the moon and returning him safely to the Earth" before the end of the decade. Kennedy was motivated by the pressure to catch up to the Soviet Union in the "space race" because Soviet Yuri Gagarin was the first human in space.'},
@@ -279,7 +279,7 @@ function draw(){
     textFont(regularFont);
     textAlign(CENTER, CENTER);
     fill('black');
-    text('just keep scrolling down (or up idk)', width*3/4,height/2+50*height/1120+rocketHeight);
+    text('just keep scrolling down', width*3/4,height/2+50*height/1120+rocketHeight);
     pop();
 
     fill(255, out * 150); 
